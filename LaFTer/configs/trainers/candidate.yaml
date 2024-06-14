@@ -1,0 +1,43 @@
+# new settings: 
+LOSS_CFG:
+  CE:
+    LOSS_TYPE: "CE"
+    HAS_CONF: False
+  ce:
+    LOSS_TYPE: "ce"
+    HAS_CONF: False
+    TEMPERATURE: 1.0
+  cc:
+    LOSS_TYPE: "cc"
+    HAS_CONF: False
+    TEMPERATURE: 1.0
+  cc_rc:
+    LOSS_TYPE: "cc_rc"
+    HAS_CONF: True
+    TEMPERATURE: 1.0
+  rc_rc:
+    LOSS_TYPE: "rc_rc"    
+    HAS_CONF: True
+    TEMPERATURE: 1.0
+
+# new settings: 
+TEMPERATURE: 1.0
+OUTPUT_DIR: ''
+
+# settings for generating parial labels:
+PartialY_CFG:
+  USE_SOFT_PARTIAL: False
+  CANDIDATE_METHOD: "$CANDIDATE_METHOD" 
+  CONF_THRESHOLD: "quantile"  
+  UPDATE_FREQ: 10
+
+  CONF_QUANTILE: 60   #for CPL, intra_inst
+  REGULAR_THRESHOLD: 0.9  #for CPL, inter_inst
+
+  TARGET_PARTIAL_RATIO: "$TARGET_PARTIAL_RATIO"
+  INIT_PARTIAL_RATIO: 0.0
+
+# settings for selecting samples:
+Selector_CFG:
+  PSEUDOSHOTS_PERCENT: 0
+  STEP_QUANTILE: "$UPDATE_FREQ"

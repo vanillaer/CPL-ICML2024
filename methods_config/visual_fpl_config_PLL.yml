@@ -1,0 +1,98 @@
+DATASET_DIR: "$DATASET_DIR"
+DATASET_NAME: "$DATASET_NAME"
+# Model
+MODALITY: 'image'
+MODEL: "$MODEL"
+# Visual ecoder
+VIS_ENCODER: "$VIS_ENCODER"
+# Prompt template
+PROMPT_TEMPLATE: 'imported in main.py'
+# Number of shats per classes in SSL
+N_LABEL: 2  # The default labeled instacnes in SSL
+
+# Prefix size
+PREFIX_SIZE: 16
+N_PSEUDOSHOTS: 16   # allowed max pseudolabels
+STEP_QUANTILE: 10
+# Prefix initialization: normal/uniform
+VIS_PREFIX_INIT: "normal"
+# Initialization mean and variance
+MEAN_INIT: 0
+VAR_INIT: 0.02
+# Seeed to separate train and validation
+validation_seed: 0
+# Ratio validation
+ratio_train_val: 1.0
+# Batch size
+BATCH_SIZE: 64
+# Number of epochs
+EPOCHS: 6
+# Scheduler
+SCHEDULER: "cosine"
+# Scheduler warmup epochs
+WARMUP_EPOCHS: 2
+WARMUP_LR: 0.0001
+# Number of accumulation iter
+ACCUMULATION_ITER: 1
+# Optimizer teacher
+OPTIM: "SGD"
+LR: 0.05     #!0.002
+DECAY: 0.05  #!5e-4
+STEP_SIZE: 1
+# Set seeds
+OPTIM_SEED: "$OPTIM_SEED"
+# Classes split
+CLASSES_SPLIT: SPLIT_SEED
+# Seed split
+SPLIT_SEED: "$SPLIT_SEED"
+
+# new settings: 
+LOSS_CFG:
+  CE:
+    LOSS_TYPE: "CE"
+    HAS_CONF: False
+  ce:
+    LOSS_TYPE: "ce"
+    HAS_CONF: False
+    TEMPERATURE: 1.0
+  cc:
+    LOSS_TYPE: "cc"
+    HAS_CONF: False
+    TEMPERATURE: 1.0
+  cc_rc:
+    LOSS_TYPE: "cc_rc"
+    HAS_CONF: True
+    TEMPERATURE: 1.0
+    CONF_MOMN: 0.95
+  rc_rc:
+    LOSS_TYPE: "rc_rc"    
+    HAS_CONF: True
+    TEMPERATURE: 1.0
+    CONF_MOMN: 0.8
+  rc_cav:
+    LOSS_TYPE: "rc_cav"    
+    HAS_CONF: True
+    TEMPERATURE: 1.0
+    CONF_MOMN: 0.95
+
+
+# new settings: 
+OUTPUT_DIR: ""
+TEMPERATURE: 1.0
+LAMBDA: 1.0
+
+# settings for generating parial labels:
+PartialY_CFG:
+  USE_SOFT_PARTIAL: False
+  CANDIDATE_METHOD: "$CANDIDATE_METHOD" # "mix" "CPL" "intra_inst" "inter_inst"
+  CONF_THRESHOLD: "$quantile"  #auto or quantile
+
+  CONF_QUANTILE: 60   #for CPL, intra_inst
+  REGULAR_THRESHOLD: 0.9  #for CPL, inter_inst
+
+  TARGET_PARTIAL_RATIO: "$TARGET_PARTIAL_RATIO"
+  INIT_PARTIAL_RATIO: 0.0
+
+# settings for selecting samples:
+Selector_CFG:
+  PSEUDOSHOTS_PERCENT: 0
