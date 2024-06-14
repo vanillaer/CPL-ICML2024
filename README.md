@@ -6,7 +6,7 @@
 [ICML 2024 oral] This repository contains the official code for the ICML 2024 paper ["Candidate Pseudolabel Learning: Enhancing Vision-Language Models by Prompt Tuning with Unlabeled Data."](https://openreview.net/pdf?id=sBJNokmYuV) The research introduces a novel method, Candidate Pseudolabel Learning (CPL), which addresses the challenges of incorrect hard pseudolabels in fine-tuning vision-language models (VLMs) with unlabeled data. CPL refines the generation of candidate pseudolabels through both intra- and inter-instance label selection based on confidence score matrix, leading to improved label accuracy and class balance. 
 
 <div align="center">
-    <img src="imgs/overview.png" alt="overview" width="600">
+    <img src="imgs/overview.png" alt="overview" width="660">
 </div>
 
 ## Table of Contents
@@ -176,6 +176,10 @@ CUDA_VISIBLE_DEVICES=[...] scripts/LaFTer.sh "0.0005"
 ```
 
 [Back to Table of Contents](#table-of-contents)
+
+
+## Contact
+If you have any further questions, please feel free to send an e-mail to: jhanzhang@163.com.
 
 ## Citation 
 
