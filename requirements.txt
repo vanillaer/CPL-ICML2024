@@ -1,8 +1,8 @@
 accelerate==0.15.0
 numpy==1.26.2
 torch==1.12.1+cu113
-torchaudio==0.12.1+cu113
 torchvision==0.13.1+cu113
+torchaudio==0.12.1
 tornado==6.4
 tqdm==4.66.1
 Pillow==10.1.0
@@ -17,3 +17,4 @@ scipy==1.11.4
 yacs==0.1.8
 timm==0.4.12
 
+--extra-index-url https://download.pytorch.org/whl/cu113
