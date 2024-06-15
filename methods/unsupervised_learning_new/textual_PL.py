@@ -1,6 +1,5 @@
 import logging
 
-import clip
 import numpy as np
 import pandas as pd
 import torch
@@ -17,7 +16,6 @@ from utils import (
     dataset_object,
     make_scheduler, 
     gererate_partialY, compute_unlabled_logits,
-    seed_worker, 
     InstanceSelector,
 )
 import copy

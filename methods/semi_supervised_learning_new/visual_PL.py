@@ -17,8 +17,7 @@ from methods.unsupervised_learning_new import TextualPrompt
 from utils import (
     dataset_object,
     make_scheduler, 
-     gererate_partialY, compute_unlabled_logits, TrainSampler,
-    seed_worker,
+    gererate_partialY, compute_unlabled_logits, TrainSampler,
     InstanceSelector,
 )
 import copy
@@ -134,8 +133,8 @@ class VisualFPL_PL(TextualPrompt):
         bs_labeled = self.balance_param * 64    #assert bs of unlabeled_data is 64:
         if bs_labeled < 8:
             bs_labeled = 8
-        if bs_labeled > 192:
-            bs_labeled = 192
+        if bs_labeled > 256:
+            bs_labeled = 256
         log.info(f"iter <{iter_num}> bs_labeled is: {bs_labeled}")
 
         train_labeled_feats = self.get_labeled_feats(labeled_imgs)

@@ -20,8 +20,7 @@ from utils.loss import PLL_loss
 
 from dassl.metrics import compute_accuracy
 from dassl.utils import (
-    MetricMeter, AverageMeter, 
-    load_checkpoint,
+    AverageMeter, 
 )
 
 accelerator = Accelerator()
