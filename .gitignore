@@ -5,6 +5,8 @@
 # New for CPL:
 /logsOf_scripts
 LaFTer/logsOf_scripts
+/script_results
+LaFTer/script_results
 
 /output
 LaFTer/output

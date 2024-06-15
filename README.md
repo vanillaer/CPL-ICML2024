@@ -6,7 +6,7 @@
 [ICML 2024 oral] This repository contains the official code for the ICML 2024 paper ["Candidate Pseudolabel Learning: Enhancing Vision-Language Models by Prompt Tuning with Unlabeled Data."](https://openreview.net/pdf?id=sBJNokmYuV) The research introduces a novel method, Candidate Pseudolabel Learning (CPL), which addresses the challenges of incorrect hard pseudolabels in fine-tuning vision-language models (VLMs) with unlabeled data. CPL refines the generation of candidate pseudolabels through both intra- and inter-instance label selection based on confidence score matrix, leading to improved label accuracy and class balance. 
 
 <div align="center">
-    <img src="imgs/overview.png" alt="overview" width="700">
+    <img src="imgs/overview.png" alt="overview" width="700"> 
 </div>
 
 ## Table of Contents
@@ -28,7 +28,13 @@ In this project, we use Python 3.9.12 and the dependencies listed in the `requir
 pip install -r requirements.txt
 ```
 
-Additionally, you need to manually install the `dassl` library in your environment by following the instructions [HERE](https://github.com/KaiyangZhou/Dassl.pytorch#installation).
+Additionally, you need to manually install the [dassl](https://github.com/KaiyangZhou/Dassl.pytorch) library in your environment by running the by following command:
+  
+```bash
+git clone https://github.com/KaiyangZhou/Dassl.pytorch.git
+cd Dassl.pytorch/
+python setup.py develop
+```
 
 ## Reproducing the Main Results
 
@@ -83,18 +89,18 @@ To execute the training strategies employing CPL across text prompts and visual 
 
 - For text prompt tuning (including UL, SSL, and TRZSL settings):  
     ```bash
-    CUDA_VISIBLE_DEVICES=[...] scripts/run-textPT_ALL.sh "0.02"
+    CUDA_VISIBLE_DEVICES=[...] bash scripts/run-textPT_ALL.sh "0.02"
     ```
 
 - For visual prompt tuning (including UL, SSL, and TRZSL settings):  
     ```bash
-    CUDA_VISIBLE_DEVICES=[...] scripts/run-visualPT_ALL.sh "0.02"
+    CUDA_VISIBLE_DEVICES=[...] bash scripts/run-visualPT_ALL.sh "0.02"
     ```
 
 Replace `[...]` with the GPU number you want to use, and "0.02" represents the value of the default learning rate. Here is an example command:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 scripts/run-textPT_ALL.sh "0.02"
+CUDA_VISIBLE_DEVICES=0 bash scripts/run-textPT_ALL.sh "0.02"
 ```
 
 Some notes:
@@ -154,13 +160,13 @@ Alternatively, you can download the CIFAR-100 dataset individually from [HERE](h
 To execute the training strategies employing CPL within the LaFTer pipeline, run the following command:
 
 ```bash
-CUDA_VISIBLE_DEVICES=[...] scripts/LaFTer_CPL.sh "0.0005"
+CUDA_VISIBLE_DEVICES=[...] bash scripts/LaFTer_CPL.sh "0.0005"
 ```
 
 Replace `[...]` with the specified GPU number you want to use, and "0.0005" is the default learning rate. For example:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 scripts/LaFTer_CPL.sh "0.0005"
+CUDA_VISIBLE_DEVICES=0 bash scripts/LaFTer_CPL.sh "0.0005"
 ```
 
 Some notes:
@@ -172,7 +178,7 @@ Some notes:
 For comparison, you can also run the original LaFTer pipeline as described in their paper by executing the following command:
 
 ```bash
-CUDA_VISIBLE_DEVICES=[...] scripts/LaFTer.sh "0.0005"
+CUDA_VISIBLE_DEVICES=[...] bash scripts/LaFTer.sh "0.0005"
 ```
 
 [Back to Table of Contents](#table-of-contents)
