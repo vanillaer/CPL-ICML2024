@@ -3,7 +3,7 @@
 # Candidate Pseudolabel Learning
 
 
-[ICML 2024 oral] This repository contains the official code for the ICML 2024 paper ["Candidate Pseudolabel Learning: Enhancing Vision-Language Models by Prompt Tuning with Unlabeled Data."](https://openreview.net/pdf?id=sBJNokmYuV) The research introduces a novel method, Candidate Pseudolabel Learning (CPL), which addresses the challenges of incorrect hard pseudolabels in fine-tuning vision-language models (VLMs) with unlabeled data. CPL refines the generation of candidate pseudolabels through both intra- and inter-instance label selection based on confidence score matrix, leading to improved label accuracy and class balance. 
+[ICML 2024 oral] This repository contains the official code for the ICML 2024 paper ["Candidate Pseudolabel Learning: Enhancing Vision-Language Models by Prompt Tuning with Unlabeled Data."](https://arxiv.org/abs/2406.10502) The research introduces a novel method, Candidate Pseudolabel Learning (CPL), which addresses the challenges of incorrect hard pseudolabels in fine-tuning vision-language models (VLMs) with unlabeled data. CPL refines the generation of candidate pseudolabels through both intra- and inter-instance label selection based on confidence score matrix, leading to improved label accuracy and class balance. 
 
 <div align="center">
     <img src="imgs/overview.png" alt="overview" width="700"> 
